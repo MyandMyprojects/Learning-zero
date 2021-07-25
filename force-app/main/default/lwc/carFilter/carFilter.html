@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="filters" icon-name="standard:calibration">
+        <div class="slds-m-horizontal_medium">
+            <lightning-input label="Search Key" type="search" value={filters.searchKey}
+            onchange={handleSearch}></lightning-input>
+            <section class="slider_section">
+                <lightning-slider label="max price" step="100" min="0" max="999999"
+                value={filters.maxPrice} onchange={handleMaxPriceChange}></lightning-slider>
+            </section>
+            <section>
+                <h2>Category</h2>
+                <template if:true={categories.data}>
+                    <template for:each={categories.data.values} for:item="category">
+                        <lightning-input key={category.value} 
+                        label={category.label} 
+                        type="checkbox" 
+                        checked
+                        data-name="categories"
+                        data-value={category.value}
+                        onchange={handleCheckbox}>
+                        </lightning-input>
+                    </template>
+                </template>
+                <template if:true={categories.error}>
+                    <div>{CATEGORY_ERROR}</div>
+                </template>
+            </section>
+            <section>
+                <h2>Make</h2>
+                <template if:true={makeType.data}>
+                    <template for:each={makeType.data.values} for:item="make">
+                        <lightning-input key={make.value} 
+                        label={make.label}
+                        type="checkbox" 
+                        checked 
+                        data-name="makeType"
+                        data-value={make.value}
+                        onchange={handleCheckbox}>
+                        </lightning-input>
+                    </template>
+                </template>
+                <template if:true={makeType.error}>
+                    <div>{MAKE_TYPE_ERROR}</div>
+                </template>
+            </section>
+        </div>
+    </lightning-card>
+</template>

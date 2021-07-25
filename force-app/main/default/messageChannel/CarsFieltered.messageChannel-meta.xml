@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This event is fired when cars selected</description>
+    <isExposed>false</isExposed>
+    <lightningMessageFields>
+        <description>selected car Id</description>
+        <fieldName>carId</fieldName>
+    </lightningMessageFields>
+    <masterLabel>carSelected</masterLabel>
+</LightningMessageChannel>
