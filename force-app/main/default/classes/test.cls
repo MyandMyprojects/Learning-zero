@@ -1,4 +1,5 @@
 
+
 public with sharing class OpportunityDataAccess {
     public List<Opportunity> getOppsForGivenIds(Set<Id> oppsIds){
         if(oppsIds.isEmpty()){
